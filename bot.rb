@@ -1,5 +1,5 @@
 puts "Installing telegram-bot-ruby gem..."
-system("gem install telegram-bot-ruby")
+system("gem install telegram-bot-ruby base64 open-uri tempfile")
 
 if $?.exitstatus == 0
   puts "\u2713 telegram-bot-ruby and some gem installed successfully!"
