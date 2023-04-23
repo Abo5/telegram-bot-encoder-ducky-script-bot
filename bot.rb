@@ -1,20 +1,13 @@
 puts "Installing telegram-bot-ruby gem..."
 system("gem install telegram-bot-ruby base64 open-uri tempfile")
 
+
 if $?.exitstatus == 0
-  puts "\u2713 telegram-bot-ruby and some gem installed successfully!"
-  puts "Updating gems..."
-  system("gem update")
-  
-  if $?.exitstatus == 0
-    puts "\u2713 Gems updated successfully!"
-    puts "Checking Ruby version..."
-    system("ruby -v")
-  else
-    puts "\u274C Failed to update gems"
-  end
+  puts "\u2713 Gems updated successfully!"
+  puts "Checking Ruby version..."
+  system("ruby -v")
 else
-  puts "\u274C Failed to install telegram-bot-ruby gem"
+  puts "\u274C Failed to update gems"
 end
 require 'telegram/bot'
 require 'base64'
