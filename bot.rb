@@ -1,7 +1,21 @@
-system("ruby -v")
-system("gem install telegram-bot-ruby base64 open-uri tempfile")
-system("clear")
-sleep(10)
+puts "Installing telegram-bot-ruby gem..."
+system("gem install telegram-bot-ruby")
+
+if $?.exitstatus == 0
+  puts "\u2713 telegram-bot-ruby and some gem installed successfully!"
+  puts "Updating gems..."
+  system("gem update")
+  
+  if $?.exitstatus == 0
+    puts "\u2713 Gems updated successfully!"
+    puts "Checking Ruby version..."
+    system("ruby -v")
+  else
+    puts "\u274C Failed to update gems"
+  end
+else
+  puts "\u274C Failed to install telegram-bot-ruby gem"
+end
 require 'telegram/bot'
 require 'base64'
 require 'open-uri'
@@ -27,7 +41,7 @@ bot.listen do |message|
   when '/help 🆘'
       bot.api.send_message(chat_id: message.chat.id, text: "Hello, welcome to the encode ducky script bot. If you want to encode a file, click /encode, send the file in .txt format, click /help for more information 😁")
   when 'our channel ℹ️'
-      bot.api.send_message(chat_id: message.chat.id, text: 'https://t.me/u8wvu')
+      bot.api.send_message(chat_id: message.chat.id, text: 'https://t.me/DuckyScript')
   when 'about ducky script 💀'
     bot.api.send_message(chat_id: message.chat.id, text: 'DuckyScript™ is the programming language of the USB Rubber Ducky™, Hak5® hotplug attack gear and officially licensed devices (Trademark Hak5 LLC. Copyright © 2010 Hak5 LLC. All rights reserved.)')
   when '/encode 🚀'
