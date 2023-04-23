@@ -1,3 +1,7 @@
+system("ruby -v")
+system("gem install telegram-bot-ruby base64 open-uri tempfile")
+system("clear")
+sleep(10)
 require 'telegram/bot'
 require 'base64'
 require 'open-uri'
